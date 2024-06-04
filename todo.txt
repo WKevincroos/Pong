@@ -1,0 +1,11 @@
+- Draw shapes (paddles and ball).
+
+- Control 2D position of paddles based on input.
+
+- Detect collision between paddles and ball to deflect ball back toward opponent.
+
+- Collision between ball and map boundaries to keep ball within bounds and to detect score.
+
+- Sound effects when ball hits paddles/walls or when point is scored.
+
+-Scorekeeping to determine winner.
