@@ -37,6 +37,8 @@ function love.load()
     game_state = "start"
     collides = false
 
+    PADDLE_SPEED = 300
+
     push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
         fullscreen = false,
         resizable = true,
@@ -62,9 +64,9 @@ function love.update(dt)
 -- Player 1 logic
 
     if love.keyboard.isDown('w') then
-        player1.speed = -200
+        player1.speed = -PADDLE_SPEED
     elseif love.keyboard.isDown('s') then
-        player1.speed = 200
+        player1.speed = PADDLE_SPEED
     else
         player1.speed = 0
     end
@@ -102,9 +104,9 @@ function love.update(dt)
 -- Player 2 logic
 
     if love.keyboard.isDown('up') then
-        player2.speed = -200
+        player2.speed = -PADDLE_SPEED
     elseif love.keyboard.isDown('down') then
-        player2.speed = 200
+        player2.speed = PADDLE_SPEED
     else
         player2.speed = 0
     end
@@ -153,6 +155,8 @@ function love.draw()
     push:apply('start')
 
     love.graphics.clear(0.5, 0.1, 0.2, 1)
+
+    debug()
 
     if game_state == "start" then
         love.graphics.setFont(small_font)
